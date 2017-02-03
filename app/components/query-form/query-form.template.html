@@ -1,0 +1,30 @@
+<h2>Query Form</h2>
+<form>
+  <!-- Begin: Checkbox parameters. -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <h3>Color</h3>
+        <div ng-repeat="color in queryFormCtrl.colors">
+          <input type="checkbox" name="color" value="{{color}}" />{{color}}
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <h3>Rarity</h3>
+        <div ng-repeat="rarity in queryFormCtrl.rarities">
+          <input type="checkbox" name="rarity" value="{{rarity}}" />{{rarity}}
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <h3>Type</h3>
+      </div>
+      <div class="col-sm-2">
+        <h3>Format</h3>
+      </div>
+      <div class="col-sm-2">
+        <h3>Status</h3>
+      </div>
+    </div>
+  </div>
+  <!-- End: Checkbox parameters. -->
+</form>

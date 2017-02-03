@@ -1,0 +1,22 @@
+{
+  "name": "card-viewer",
+  "version": "1.0.0",
+  "description": "Interface for searching and viewing Magic: The Gathering cards using the Deckbrew API.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "CardViewer"
+  },
+  "author": "Addison Mink",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "electron-prebuilt": "^1.4.13",
+    "jquery": "^3.1.1"
+  }
+}
