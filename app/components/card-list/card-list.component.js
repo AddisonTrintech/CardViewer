@@ -1,10 +1,9 @@
 cardList.component('cardList', {
   restrict: 'E',
   templateUrl: 'app/components/card-list/card-list.template.html',
-  controller: function() {
+  controller: function(form) {
     var cardListCtrl = this;
-
-    cardListCtrl.form = queryForm.queryFormCtrl.form;
+    cardListCtrl.form = form;
   },
   controllerAs: 'cardListCtrl'
 });
