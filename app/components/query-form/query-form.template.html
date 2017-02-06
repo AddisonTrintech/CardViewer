@@ -1,59 +1,62 @@
 <h2>Query Form</h2>
 <form>
-  <!-- Begin: Checkbox parameters. -->
+  {{queryFormCtrl.form}}
+  <!-- Begin: Textbox Parameters. -->
   <div class="row">
     <div class="col-sm-4">
       <h3>Name</h3>
-      <input type="text" />
+      <input type="text" ng-model="queryFormCtrl.form.name" />
     </div>
     <div class="col-sm-4">
       <h3>Subtype</h3>
-      <input type="text" />
+      <input type="text" ng-model="queryFormCtrl.form.subtype" />
     </div>
     <div class="col-sm-4">
       <h3>Set</h3>
-      <input type="text" / />
+      <input type="text" ng-model="queryFormCtrl.form.set" />
     </div>
   </div>
+  <!-- End: Textbox Parameters. -->
 
+    <!-- Begin: Checkbox Parameters. -->
     <div class="row">
       <div class="col-sm-2">
         <h3>Color</h3>
         <div ng-repeat="colorIndex in queryFormCtrl.colorIndex">
-          <input type="checkbox" />{{queryFormCtrl.colors[colorIndex]}}
+          <input type="checkbox" ng-model="queryFormCtrl.form.colors[colorIndex]" />{{queryFormCtrl.colors[colorIndex]}}
         </div>
       </div>
       <div class="col-sm-2">
         <h3>Rarity</h3>
         <div ng-repeat="rarityIndex in queryFormCtrl.rarityIndex">
-          <input type="checkbox" />{{queryFormCtrl.rarities[rarityIndex]}}
+          <input type="checkbox" ng-model="queryFormCtrl.form.rarities[rarityIndex]" />{{queryFormCtrl.rarities[rarityIndex]}}
         </div>
       </div>
       <div class="col-sm-2">
         <h3>Type</h3>
         <div ng-repeat="typeIndex in queryFormCtrl.typeIndex">
-          <input type="checkbox" />{{queryFormCtrl.types[typeIndex]}}
+          <input type="checkbox" ng-model="queryFormCtrl.form.types[typeIndex]" />{{queryFormCtrl.types[typeIndex]}}
         </div>
       </div>
       <div class="col-sm-2">
         <h3>Supertype</h3>
         <div ng-repeat="supertypeIndex in queryFormCtrl.supertypeIndex">
-          <input type="checkbox" />{{queryFormCtrl.supertypes[supertypeIndex]}}
+          <input type="checkbox" ng-model="queryFormCtrl.form.supertypes[supertypeIndex]" />{{queryFormCtrl.supertypes[supertypeIndex]}}
         </div>
       </div>
       <div class="col-sm-2">
         <h3>Format</h3>
         <div ng-repeat="formatIndex in queryFormCtrl.formatIndex">
-          <input type="Checkbox" />{{queryFormCtrl.formats[formatIndex]}}
+          <input type="Checkbox" ng-model="queryFormCtrl.form.formats[formatIndex]" />{{queryFormCtrl.formats[formatIndex]}}
         </div>
       </div>
       <div class="col-sm-2">
         <h3>Status</h3>
         <div ng-repeat="statusIndex in queryFormCtrl.statusIndex">
-          <input type="Checkbox" />{{queryFormCtrl.statuses[statusIndex]}}
+          <input type="Checkbox" ng-model="queryFormCtrl.form.statuses[statusIndex]" />{{queryFormCtrl.statuses[statusIndex]}}
         </div>
       </div>
     </div>
   <br />
-  <!-- End: Checkbox parameters. -->
+  <!-- End: Checkbox Parameters. -->
 </form>

@@ -5,6 +5,20 @@ queryForm.component('queryForm', {
   controller: function($http) {
     var queryFormCtrl = this;
 
+    // Begin: Form model.
+    queryFormCtrl.form = {
+      name: '',
+      subtype: '',
+      set: '',
+      colors: [],
+      rarities: [],
+      types: [],
+      supertypes: [],
+      formats: [],
+      statuses: []
+    };
+    // End: Form model.
+
     // Begin: Form parameters.
     queryFormCtrl.colors = [];
     queryFormCtrl.colorIndex = [];
