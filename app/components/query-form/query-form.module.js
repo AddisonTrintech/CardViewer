@@ -5,10 +5,25 @@ queryForm.value('form', {
   name: '',
   subtype: '',
   set: '',
-  colors: [],
-  rarities: [],
-  types: [],
-  supertypes: [],
-  formats: [],
-  statuses: []
+  colors: {},
+  rarities: {
+    common: false,
+    uncommon: false,
+    rare: false,
+    mythic: false
+  },
+  types: {},
+  supertypes: {},
+  formats: {
+    vintage: false,
+    legacy: false,
+    modern: false,
+    standard: false,
+    commander: false
+  },
+  statuses: {
+    legal: false,
+    banned: false,
+    restricted: false
+  }
 });
