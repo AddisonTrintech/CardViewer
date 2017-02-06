@@ -5,26 +5,54 @@ queryForm.component('queryForm', {
   controller: function($http) {
     var queryFormCtrl = this;
 
-    // Begin: Checkbox parameters.
-    $http.get('https://api.deckbrew.com/mtg/colors').then(
-      function success(response) { queryFormCtrl.colors = response.data; },
-      function failure(response) { queryFormCtrl.colors = [] }
-    );
+    // Begin: Form parameters.
+    queryFormCtrl.colors = [];
+    queryFormCtrl.colorIndex = [];
 
     queryFormCtrl.rarities = ['common', 'uncommon', 'rare', 'mythic'];
+    queryFormCtrl.rarityIndex = [0, 1, 2, 3];
 
-    $http.get('https://api.deckbrew.com/mtg/types').then(
-      function success(response) { queryFormCtrl.types = response.data; },
-      function failure(response) { queryFormCtrl.types = [] }
-    );
+    queryFormCtrl.types = [];
+    queryFormCtrl.typeIndex = [];
+
+    queryFormCtrl.supertypes = [];
+    queryFormCtrl.supertypeIndex = [];
 
     queryFormCtrl.formats = ['vintage', 'legacy', 'modern', 'standard', 'commander'];
+    queryFormCtrl.formatIndex = [0, 1, 2, 3, 4];
 
     queryFormCtrl.statuses = ['legal', 'banned', 'restricted'];
-    // End: Checkbox parameters.
+    queryFormCtrl.statusIndex = [0, 1, 2];
+    // End: Form parameters.
 
-    // Begin:
+    // Begin: Service calls to get form information.
+    $http.get('https://api.deckbrew.com/mtg/colors').then(
+      function success(response) {
+        queryFormCtrl.colors = response.data;
+        for(var i = 0; i < queryFormCtrl.colors.length; i++)
+          queryFormCtrl.colorIndex.push(i);
+      },
+      function failure(response) {}
+    );
 
+    $http.get('https://api.deckbrew.com/mtg/types').then(
+      function success(response) {
+        queryFormCtrl.types = response.data;
+        for(var i = 0; i < queryFormCtrl.types.length; i++)
+          queryFormCtrl.typeIndex.push(i);
+      },
+      function failure(response) {}
+    );
+
+    $http.get('https://api.deckbrew.com/mtg/supertypes').then(
+      function success(response) {
+        queryFormCtrl.supertypes = response.data;
+        for(var i = 0; i < queryFormCtrl.supertypes.length; i++)
+          queryFormCtrl.supertypeIndex.push(i);
+      },
+      function failure(reponse) {}
+    );
+    // End: Service calls to get form information.
   },
   controllerAs: 'queryFormCtrl'
 });
