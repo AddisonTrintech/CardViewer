@@ -1,2 +1,2 @@
 'use strict';
-var cardList = angular.module('cardList', []);
+var cardList = angular.module('cardList', ['queryForm']);
