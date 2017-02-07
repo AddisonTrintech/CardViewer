@@ -27,3 +27,5 @@ queryForm.value('form', {
     restricted: false
   }
 });
+
+queryForm.value('results', {cards: []});

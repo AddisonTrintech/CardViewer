@@ -1,2 +1,6 @@
 <h2>Card List</h2>
-{{cardListCtrl.buildQueryURL(cardListCtrl.form)}}
+<ul>
+  <li ng-repeat="card in cardListCtrl.results.cards">
+    {{card.name}}
+  </li>
+</ul>
