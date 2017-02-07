@@ -1,6 +1,23 @@
 <h2>Card List</h2>
-<ul>
-  <li ng-repeat="card in cardListCtrl.results.cards">
-    {{card.name}}
-  </li>
-</ul>
+<div ng-repeat="card in cardListCtrl.results.cards">
+  <h3>{{card.name}}</h3>
+  <div class="row">
+    <div class="col-sm-4">
+      <img ng-src="{{card.editions[0].image_url}}" />
+    </div>
+    <div class="col-sm-8">
+      <h4>{{card.name}}</h4>
+      <p><b>Cost:</b> {{card.cost}}</p>
+      <p><b>Text:</b> {{card.text}}</p>
+      <p><b>Formats:</b>
+        <span ng-show="{{card.formats.commander == 'legal'}}">commander </span>
+        <span ng-show="{{card.formats.legacy == 'legal'}}">legacy </span>
+        <span ng-show="{{card.formats.modern == 'legal'}}">modern </span>
+        <span ng-show="{{card.formats.vintage == 'legal'}}">vintage </span>
+      </p>
+      <p><b>Editons:</b> <span ng-repeat="edition in card.editions">{{edition.set}}</span></p>
+      <p><b>Flavor:</b> <i>{{card.editions[0].flavor}}</i></p>
+      <p><b>Rarity:</b> {{card.editions[0].rarity}}</p>
+    </div>
+  </div>
+</div>
