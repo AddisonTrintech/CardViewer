@@ -1,0 +1,2 @@
+* Make it so that the active nav pill has the "active" css class.
+* Make it so that if a query returns multiple pages, all pages are retrieved and sent to the card list component.
