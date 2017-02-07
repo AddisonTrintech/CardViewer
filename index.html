@@ -26,8 +26,8 @@
       <h1>Card Viewer</h1>
       <section ng-controller="TabController as tabCtrl">
         <ul class="nav nav-pills">
-          <li><a href="#" ng-click="tabCtrl.setTab('query')">Query</a></li>
-          <li><a href="#" ng-click="tabCtrl.setTab('results')">Results</a></li>
+          <li ng-class="{active: tabCtrl.isActiveTab('query')}"><a href="#" ng-click="tabCtrl.setTab('query')">Query</a></li>
+          <li ng-class="{active: tabCtrl.isActiveTab('results')}"><a href="#" ng-click="tabCtrl.setTab('results')">Results</a></li>
         </ul>
 
         <section ng-show="tabCtrl.isActiveTab('query')">
